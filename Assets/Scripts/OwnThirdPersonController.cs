@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 //using UnityStandardAssets.Vehicles.Car;
 
 public class OwnThirdPersonController : MonoBehaviour {
@@ -39,6 +41,8 @@ public class OwnThirdPersonController : MonoBehaviour {
     public int rotationX = 180;
     public float speed = 5f;
     public float zoomInOut = 5f;
+
+    public NavMeshAgent agent;
 
     #endregion
 
