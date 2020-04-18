@@ -348,13 +348,13 @@ MonoBehaviour:
   - angle: 60
     sliceLabel: 
     icon: {fileID: 0}
-    nonHighlightedColor: {r: 0, g: 0, b: 0, a: 0}
-    highlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    nonHighlightedColor: {r: 0.14759947, g: 0.17721638, b: 0.47794116, a: 1}
+    highlightedColor: {r: 1, g: 0.80689657, b: 0, a: 1}
     disabledColor: {r: 0, g: 0, b: 0, a: 0}
     onSlicePressed:
       m_PersistentCalls:
         m_Calls: []
-    iconSize: 0
+    iconSize: 8
     isInteractable: 1
     hoverFunctions: 0
     onHoverEnter:
@@ -367,13 +367,13 @@ MonoBehaviour:
   - angle: 60
     sliceLabel: 
     icon: {fileID: 0}
-    nonHighlightedColor: {r: 0, g: 0, b: 0, a: 0}
-    highlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    nonHighlightedColor: {r: 0.14759947, g: 0.17721638, b: 0.47794116, a: 1}
+    highlightedColor: {r: 1, g: 0.80689657, b: 0, a: 1}
     disabledColor: {r: 0, g: 0, b: 0, a: 0}
     onSlicePressed:
       m_PersistentCalls:
         m_Calls: []
-    iconSize: 0
+    iconSize: 8
     isInteractable: 1
     hoverFunctions: 0
     onHoverEnter:
@@ -386,13 +386,13 @@ MonoBehaviour:
   - angle: 60
     sliceLabel: 
     icon: {fileID: 0}
-    nonHighlightedColor: {r: 0, g: 0, b: 0, a: 0}
-    highlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    nonHighlightedColor: {r: 0.14759947, g: 0.17721638, b: 0.47794116, a: 1}
+    highlightedColor: {r: 1, g: 0.80689657, b: 0, a: 1}
     disabledColor: {r: 0, g: 0, b: 0, a: 0}
     onSlicePressed:
       m_PersistentCalls:
         m_Calls: []
-    iconSize: 0
+    iconSize: 8
     isInteractable: 1
     hoverFunctions: 0
     onHoverEnter:
@@ -405,13 +405,13 @@ MonoBehaviour:
   - angle: 60
     sliceLabel: 
     icon: {fileID: 0}
-    nonHighlightedColor: {r: 0, g: 0, b: 0, a: 0}
-    highlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    nonHighlightedColor: {r: 0.14759947, g: 0.17721638, b: 0.47794116, a: 1}
+    highlightedColor: {r: 1, g: 0.80689657, b: 0, a: 1}
     disabledColor: {r: 0, g: 0, b: 0, a: 0}
     onSlicePressed:
       m_PersistentCalls:
         m_Calls: []
-    iconSize: 0
+    iconSize: 8
     isInteractable: 1
     hoverFunctions: 0
     onHoverEnter:
@@ -424,13 +424,13 @@ MonoBehaviour:
   - angle: 60
     sliceLabel: 
     icon: {fileID: 0}
-    nonHighlightedColor: {r: 0, g: 0, b: 0, a: 0}
-    highlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    nonHighlightedColor: {r: 0.14759947, g: 0.17721638, b: 0.47794116, a: 1}
+    highlightedColor: {r: 1, g: 0.80689657, b: 0, a: 1}
     disabledColor: {r: 0, g: 0, b: 0, a: 0}
     onSlicePressed:
       m_PersistentCalls:
         m_Calls: []
-    iconSize: 0
+    iconSize: 8
     isInteractable: 1
     hoverFunctions: 0
     onHoverEnter:
@@ -443,13 +443,13 @@ MonoBehaviour:
   - angle: 60
     sliceLabel: 
     icon: {fileID: 0}
-    nonHighlightedColor: {r: 0, g: 0, b: 0, a: 0}
-    highlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    nonHighlightedColor: {r: 0.14759947, g: 0.17721638, b: 0.47794116, a: 1}
+    highlightedColor: {r: 1, g: 0.80689657, b: 0, a: 1}
     disabledColor: {r: 0, g: 0, b: 0, a: 0}
     onSlicePressed:
       m_PersistentCalls:
         m_Calls: []
-    iconSize: 0
+    iconSize: 8
     isInteractable: 1
     hoverFunctions: 0
     onHoverEnter:
