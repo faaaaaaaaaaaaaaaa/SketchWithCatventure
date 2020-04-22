@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 //using UnityStandardAssets.Vehicles.Car;
 
+[RequireComponent(typeof(PlayerMotor))]
 public class OwnThirdPersonController : MonoBehaviour {
 
     #region Variable
@@ -43,6 +44,8 @@ public class OwnThirdPersonController : MonoBehaviour {
     public float zoomInOut = 5f;
 
     public NavMeshAgent agent;
+    public Interactable focus;
+    PlayerMotor motor;
 
     #endregion
 
@@ -58,6 +61,7 @@ public class OwnThirdPersonController : MonoBehaviour {
         Renderer = GetComponentInChildren<SkinnedMeshRenderer>();
 
         animator = GetComponent<Animator>();
+        motor = GetComponent<PlayerMotor>();
     }
 	
 	// Update is called once per frame
@@ -129,16 +133,53 @@ public class OwnThirdPersonController : MonoBehaviour {
         if (LeftJoystick.inputVector.x != 0 && LeftJoystick.inputVector.y != 0)
         {
             animator.Play("Run");
+           // motor.MoveToPoint(input);   // Move to where we hit
+            RemoveFocus();
         }
         else if(LeftJoystick.inputVector.x == 0 && LeftJoystick.inputVector.y == 0)
         {
             animator.Play("Idle2");
+            Interactable interactable = GetComponent<Interactable>();
+            if (interactable != null)
+            {
+                SetFocus(interactable);
+            }
         }
 
         //Debug.Log(LeftJoystick.inputVector.x);
         //Debug.Log(LeftJoystick.inputVector.y);
 
     }
+    #endregion
+
+    #region focus
+
+    void SetFocus(Interactable newFocus)
+    {
+        // If our focus has changed
+        if (newFocus != focus)
+        {
+            // Defocus the old one
+            if (focus != null)
+                focus.OnDefocused();
+
+            focus = newFocus;   // Set our new focus
+            motor.FollowTarget(newFocus);   // Follow the new focus
+        }
+
+        newFocus.OnFocused(transform);
+    }
+
+    // Remove our current focus
+    void RemoveFocus()
+    {
+        if (focus != null)
+            focus.OnDefocused();
+
+        focus = null;
+        motor.StopFollowingTarget();
+    }
+
     #endregion
 
     #region Shoot
@@ -205,7 +246,7 @@ public class OwnThirdPersonController : MonoBehaviour {
 }
 #endregion
 
-    #region Stunt
+#region Stunt
 /*
 var crouchbutton = CrouchButton.Pressed || Input.GetKey(KeyCode.C);
 

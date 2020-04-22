@@ -6,15 +6,18 @@ public class PlayerStat : CharacterStats
 
 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
+    // Use this for initialization
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Start () {
+
         
+
+    }
+    
+
+    public override void Die()
+    {
+        base.Die();
+        PlayerManager.instance.KillPlayer();
     }
 }

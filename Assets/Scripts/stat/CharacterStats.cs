@@ -5,34 +5,44 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
 
+    // Health
     public int maxHealth = 100;
-    public int currentHealth  { get ; private set;}
+    public int currentHealth { get; private set; }
+    //public Healthbar healthbar;
 
     public stat damage;
     public stat armor;
 
-    private void Awake()
+    public event System.Action<int, int> OnHealthChanged;
+
+    // Set current health to max health
+    // when starting the game.
+    void Awake()
     {
         currentHealth = maxHealth;
+        //healthbar.SetMaxHealth(maxHealth);
     }
 
-    private void Update()
+    // Damage the character
+    public void TakeDamage(int damage)
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            TakeDamage(10);
-        }
-    }
-
-    public void TakeDamage (int damage)
-    {
+        // Subtract the armor value
         damage -= armor.GetValue();
         damage = Mathf.Clamp(damage, 0, int.MaxValue);
 
+        // Damage the character
         currentHealth -= damage;
-        Debug.Log(transform.name + " takes " + damage + " damage. ");
+        Debug.Log(transform.name + " takes " + damage + " damage.");
 
-        if(currentHealth <= 0)
+
+        if (OnHealthChanged != null)
+        {
+            OnHealthChanged(maxHealth, currentHealth);
+            //healthbar.SetMaxHealth(currentHealth);
+        }
+
+        // If health reaches zero
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -40,6 +50,10 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void Die()
     {
-
+        // Die in some way
+        // This method is meant to be overwritten
+        Debug.Log(transform.name + " died.");
     }
+
+
 }

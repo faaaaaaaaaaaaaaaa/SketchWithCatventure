@@ -9,14 +9,14 @@ public class EnemyController : MonoBehaviour
 
     Transform target;   // Reference to the player
     NavMeshAgent agent; // Reference to the NavMeshAgent
-    //CharacterCombat combat;
+    CharacterCombat combat;
 
     // Use this for initialization
     void Start()
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-        //combat = GetComponent<CharacterCombat>();
+        combat = GetComponent<CharacterCombat>();
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
                 CharacterStats targetStats = target.GetComponent<CharacterStats>();
                 if (targetStats != null)
                 {
-                   // combat.Attack(targetStats);
+                   combat.Attack(targetStats);
                 }
 
                 FaceTarget();   // Make sure to face towards the target
